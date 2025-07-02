@@ -1,0 +1,190 @@
+/*
+Theme Name: My Custom Theme
+Author: Dhanashree shelke
+Version: 1.0
+*/
+
+
+:root {
+  --primary-color: #123456;
+  --secondary-color: #f90;
+  --text-color: #333;
+  --bg-light: #f9f9f9;
+  --transition-speed: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Header */
+.site-header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  /* position: sticky; */
+  top: 0;
+  /* z-index: 1000; */
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header h1 { font-size: 1.8rem; }
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.site-header nav li a {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+/* Hero */
+.hero {
+  background: var(--primary-color) url('./assets/img.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 52, 86, 0.5);
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 1s ease forwards;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+  display: inline-block;
+}
+.btn:hover {
+  background-color: #e68a00;
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: white;
+  padding: 4rem 0;
+}
+.testimonials h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.testimonial-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.testimonial-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.testimonial-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.testimonial-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+.site-footer p {
+  margin-bottom: 0.5rem;
+}
+.site-footer a {
+  color: #ffd;
+}
+
+/* Utility */
+.text-center { text-align: center; }
+
+@media (max-width: 768px) {
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}

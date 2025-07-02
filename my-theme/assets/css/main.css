@@ -1,0 +1,18 @@
+/* Layout & responsiveness */
+.container { max-width:1200px; margin: 0 auto; padding:1rem; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:1rem; }
+img { max-width:100%; display:block; }
+
+/* Hero Section */
+.hero { background:#123456; color:#fff; padding:4rem 0; text-align:center; }
+.btn { background:#f90; color:#123456; padding:.75rem 1.5rem; border:none; cursor:pointer; transition:background .3s; }
+.btn:hover { background:#e68a00; }
+
+/* Animations (Fade-in cards) */
+.testimonial-card { opacity:0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.testimonial-card.visible { opacity:1; transform: translateY(0); }
+
+/* Responsive adjustments */
+@media (max-width:768px) {
+  .hero h2 { font-size:1.5rem; }
+}
